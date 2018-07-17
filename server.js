@@ -47,6 +47,12 @@ app.get('/about', (req, res) => {
   //res.send('About page');
 });
 //Challenge create route at /bad, send back json message with errm message property
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'mikes projects'
+  });
+  //res.send('About page');
+});
 app.get('/bad', (req, res) => {
   res.send({//'baddd page'
 //     errorMessage: 'unable to fulfill this request'
@@ -57,3 +63,9 @@ app.get('/bad', (req, res) => {
 app.listen(port, ()=> {
   console.log(`server is up on port ${port}`);
 }); //common port for developing locally
+
+//add a new projects page to website,
+//rener a new url template, new html page, porfolio pla
+//write partials in header.hbs
+//test locally , make commit
+//deploy lve to web git push heroku
