@@ -1,10 +1,9 @@
-//expressjs.com express framework has its own website
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 const port = process.env.PORT || 3000;
 
-var app = express();
+var app = express();  // handler for http request
 hbs.registerPartials(__dirname +'/views/partials')
 app.set('view engine', 'hbs');
 
@@ -20,9 +19,9 @@ app.use((req, res, next) => {
   console.log(log);
   next();
 });
-// app.use((req, res, next) => {
+// app.use((req, res, next) =>{
 //   res.render('maint.hbs');
-// });
+// })
 app.use(express.static(__dirname +'/public')); // middleware , look at expressjs.com
 
 hbs.registerHelper('getCurrentYear', ()=>{
@@ -69,3 +68,21 @@ app.listen(port, ()=> {
 //write partials in header.hbs
 //test locally , make commit
 //deploy lve to web git push heroku
+
+//expressjs.com express framework has its own website
+
+/*
+  Date of use:
+  IDE: Atom 1.25
+  Notes: Launched on website: to launch locally:
+    launch cmd window, navigate to folder, type nodemon server.js, and lanunch in
+    the browser by typing localhost:3000.
+    To quit local server: CTRL+C to quit
+    to update heroku cli, go to cli.heroku.com
+    url - http://mikesdemo.herokuapp.com/
+    STATUS - need to update heroku cli and re deploy to heroku ( see gmail on this)
+    helpful website: http://expressjs.com/
+
+    to create a timestamp, create new variable
+    var now = new Date().toString();
+*/
